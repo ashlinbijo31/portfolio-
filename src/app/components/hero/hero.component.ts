@@ -152,7 +152,7 @@ import { CommonModule } from '@angular/common';
     }
 
     .line-2 {
-      font-size: clamp(4rem, 10vw, 9rem);
+      font-size: clamp(2.6rem, 10vw, 9rem);
       background: var(--gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -175,6 +175,8 @@ import { CommonModule } from '@angular/common';
       line-height: 1.9;
       margin-bottom: 48px;
       animation: fadeInUp 0.6s ease 0.3s both;
+      word-break: break-word;
+      overflow-wrap: break-word;
     }
 
     .highlight { color: var(--accent); }
@@ -300,13 +302,18 @@ import { CommonModule } from '@angular/common';
     }
 
     @media (max-width: 768px) {
-      .hero-content { padding-top: 90px; padding-bottom: 40px; }
-      .hero-label { font-size: 0.6rem; padding: 6px 12px; margin-bottom: 24px; }
-      .hero-sub { font-size: 0.8rem; margin-bottom: 32px; }
-      .hero-cta { flex-wrap: wrap; gap: 14px; margin-bottom: 56px; }
+      .hero-content { padding-top: 88px; padding-bottom: 40px; }
+      .hero-label { font-size: 0.58rem; padding: 6px 12px; margin-bottom: 20px; letter-spacing: 0.08em; }
+      .line-name { font-size: clamp(1.6rem, 7vw, 2.5rem); }
+      .line-2 { font-size: clamp(2.6rem, 13vw, 4rem); }
+      .hero-sub { font-size: 0.78rem; margin-bottom: 28px; max-width: 100%; }
+      .hero-cta { flex-direction: column; align-items: flex-start; gap: 12px; margin-bottom: 48px; }
       .btn-primary { width: 100%; justify-content: center; }
-      .hero-stats { gap: 28px; }
-      .stat-number { font-size: 2rem; }
+      .btn-secondary { font-size: 0.78rem; }
+      .btn-resume { font-size: 0.78rem; }
+      .hero-stats { gap: 24px; }
+      .stat-number { font-size: 1.8rem; }
+      .stat-label { font-size: 0.58rem; }
       .scroll-indicator { display: none; }
     }
   `]
