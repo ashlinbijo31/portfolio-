@@ -245,7 +245,11 @@ import { CommonModule } from '@angular/common';
     }
 
     @media (max-width: 768px) {
-      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-title { font-size: clamp(1.8rem, 7vw, 2.5rem); margin-bottom: 20px; }
+      .about-text p { font-size: 0.8rem; }
+      .card-code { font-size: 0.72rem; padding: 16px; }
+      .timeline-item { grid-template-columns: 44px 10px 1fr; gap: 10px; }
     }
   `]
 })

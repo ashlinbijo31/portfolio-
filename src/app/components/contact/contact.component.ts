@@ -190,7 +190,11 @@ import { CommonModule } from '@angular/common';
     }
 
     @media (max-width: 768px) {
-      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 36px; }
+      .contact-title { font-size: clamp(2rem, 10vw, 3.5rem); }
+      .contact-link { padding: 16px 18px; gap: 14px; }
+      .contact-link:hover { padding-left: 18px; }
+      .link-value { font-size: 0.82rem; }
     }
   `]
 })

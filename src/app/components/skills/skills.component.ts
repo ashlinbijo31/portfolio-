@@ -143,8 +143,10 @@ import { CommonModule } from '@angular/common';
     }
 
     @media (max-width: 768px) {
+      .skills-title { font-size: clamp(1.8rem, 7vw, 2.5rem); margin-bottom: 32px; }
       .skills-grid { grid-template-columns: 1fr; }
-      .tools-row { flex-direction: column; align-items: flex-start; }
+      .skill-category { padding: 28px 20px; }
+      .tools-row { flex-direction: column; align-items: flex-start; gap: 14px; }
     }
   `]
 })

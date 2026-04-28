@@ -300,7 +300,13 @@ import { CommonModule } from '@angular/common';
     }
 
     @media (max-width: 768px) {
-      .hero-stats { gap: 32px; }
+      .hero-content { padding-top: 90px; padding-bottom: 40px; }
+      .hero-label { font-size: 0.6rem; padding: 6px 12px; margin-bottom: 24px; }
+      .hero-sub { font-size: 0.8rem; margin-bottom: 32px; }
+      .hero-cta { flex-wrap: wrap; gap: 14px; margin-bottom: 56px; }
+      .btn-primary { width: 100%; justify-content: center; }
+      .hero-stats { gap: 28px; }
+      .stat-number { font-size: 2rem; }
       .scroll-indicator { display: none; }
     }
   `]

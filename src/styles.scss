@@ -69,6 +69,12 @@ a, button {
   cursor: none;
 }
 
+@media (max-width: 768px) {
+  a, button { cursor: auto; }
+  body { cursor: auto; }
+  .cursor, .cursor-follower { display: none; }
+}
+
 ::selection {
   background: var(--accent);
   color: var(--bg-primary);

@@ -205,9 +205,16 @@ import { CommonModule } from '@angular/common';
     }
 
     @media (max-width: 768px) {
-      .project-item { grid-template-columns: 40px 1fr; }
-      .project-links { display: none; }
-      .projects-header { flex-direction: column; gap: 16px; align-items: flex-start; }
+      .projects-title { font-size: clamp(1.8rem, 7vw, 2.5rem); }
+      .projects-header { flex-direction: column; gap: 12px; align-items: flex-start; margin-bottom: 40px; }
+      .project-item { grid-template-columns: 36px 1fr; gap: 16px; padding: 28px 0; }
+      .project-item:hover { padding-left: 0; }
+      .project-name { font-size: 1.1rem; }
+      .project-desc { font-size: 0.75rem; }
+      .project-links { display: flex; flex-direction: row; gap: 8px; margin-top: 12px; }
+      .project-info { grid-column: 2; }
+      .project-item { grid-template-columns: 36px 1fr; grid-template-rows: auto auto; }
+      .project-links { grid-column: 2; justify-content: flex-start; }
     }
   `]
 })
