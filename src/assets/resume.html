@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ashlin Bijo G — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent: #4f46e5;
+      --text: #111827;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --bg-light: #f9fafb;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: #fff;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .print-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      cursor: pointer;
+      letter-spacing: 0.05em;
+      z-index: 100;
+      transition: opacity 0.2s;
+    }
+    .print-btn:hover { opacity: 0.85; }
+
+    .page {
+      max-width: 820px;
+      margin: 40px auto;
+      padding: 56px 64px;
+      background: #fff;
+      box-shadow: 0 0 40px rgba(0,0,0,0.08);
+    }
+
+    /* Header */
+    .header { margin-bottom: 36px; padding-bottom: 28px; border-bottom: 2px solid var(--text); }
+
+    .name {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .title {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--muted);
+      margin-bottom: 16px;
+      letter-spacing: 0.01em;
+    }
+
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 20px;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    .contact-row a { color: var(--accent); text-decoration: none; }
+    .contact-row a:hover { text-decoration: underline; }
+
+    .contact-item { display: flex; align-items: center; gap: 5px; }
+
+    /* Sections */
+    .section { margin-bottom: 28px; }
+
+    .section-title {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* Experience */
+    .exp-item { margin-bottom: 20px; }
+    .exp-item:last-child { margin-bottom: 0; }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 4px;
+    }
+
+    .exp-role {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    .exp-date {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+      white-space: nowrap;
+      margin-left: 16px;
+    }
+
+    .exp-company {
+      font-size: 0.82rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .exp-points {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .exp-points li {
+      font-size: 0.82rem;
+      color: #374151;
+      padding-left: 16px;
+      position: relative;
+      line-height: 1.55;
+    }
+
+    .exp-points li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.7rem;
+      top: 2px;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .skill-row {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 12px;
+      align-items: baseline;
+      font-size: 0.82rem;
+    }
+
+    .skill-cat {
+      font-weight: 600;
+      color: var(--text);
+      font-size: 0.78rem;
+    }
+
+    .skill-list { color: #374151; }
+
+    /* Education */
+    .edu-grid { display: flex; flex-direction: column; gap: 12px; }
+
+    .edu-item { display: flex; justify-content: space-between; align-items: flex-start; }
+
+    .edu-degree {
+      font-weight: 600;
+      font-size: 0.88rem;
+    }
+
+    .edu-school {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .edu-year {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+      white-space: nowrap;
+      margin-left: 16px;
+    }
+
+    /* Projects */
+    .projects-grid { display: flex; flex-direction: column; gap: 12px; }
+
+    .project-item {}
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .project-name {
+      font-weight: 600;
+      font-size: 0.88rem;
+    }
+
+    .project-tech {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--accent);
+      white-space: nowrap;
+      margin-left: 12px;
+    }
+
+    .project-desc {
+      font-size: 0.78rem;
+      color: #6b7280;
+      line-height: 1.5;
+    }
+
+    /* Footer */
+    .resume-footer {
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--muted);
+    }
+
+    /* Print styles */
+    @media print {
+      .print-btn { display: none; }
+      body { background: #fff; }
+      .page { margin: 0; padding: 32px 40px; box-shadow: none; max-width: 100%; }
+      a { color: inherit; }
+    }
+
+    @page {
+      margin: 0.5in;
+      size: A4;
+    }
+  </style>
+</head>
+<body>
+
+<button class="print-btn" onclick="window.print()">⬇ Save as PDF</button>
+
+<div class="page">
+
+  <!-- Header -->
+  <header class="header">
+    <h1 class="name">Ashlin Bijo G</h1>
+    <p class="title">UI / Frontend Developer</p>
+    <div class="contact-row">
+      <span class="contact-item">📍 Chennai, India</span>
+      <span class="contact-item">✉ <a href="mailto:ashlinbijo31@gmail.com">ashlinbijo31@gmail.com</a></span>
+      <span class="contact-item">📱 +91 8438410157</span>
+      <span class="contact-item">🔗 <a href="https://linkedin.com/in/ashlin-bijo-4146b725a" target="_blank">linkedin.com/in/ashlin-bijo-4146b725a</a></span>
+      <span class="contact-item">⌥ <a href="https://github.com/ashlinbijo31" target="_blank">github.com/ashlinbijo31</a></span>
+    </div>
+  </header>
+
+  <!-- Experience -->
+  <div class="section">
+    <h2 class="section-title">Experience</h2>
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-role">UI Developer</span>
+        <span class="exp-date">2023 – Present</span>
+      </div>
+      <div class="exp-company">Hotfoot Technology Solutions · Chennai, India</div>
+      <ul class="exp-points">
+        <li>Built complex banking login systems and real-time dashboards using JavaScript, AJAX, and jQuery</li>
+        <li>Integrated multi-CIF banking systems improving data handling and user experience on live platform</li>
+        <li>Developed loan calculator and funds transfer module with real-time API calculations</li>
+        <li>Optimized front-end performance and ensured cross-browser compatibility for banking applications</li>
+        <li>Collaborated with backend teams to consume and integrate RESTful APIs with JSON/XML data</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <span class="exp-role">Web Developer</span>
+        <span class="exp-date">2022</span>
+      </div>
+      <div class="exp-company">Cube 45 E-commerce Services · Chennai, India</div>
+      <ul class="exp-points">
+        <li>Customized WordPress themes and developed plugins for multiple e-commerce clients</li>
+        <li>Built responsive, pixel-perfect layouts using Elementor, Bootstrap, HTML5, and CSS3</li>
+        <li>Implemented on-page SEO best practices improving search engine rankings</li>
+        <li>Ensured cross-browser compatibility and mobile-first responsive design across all projects</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Skills -->
+  <div class="section">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-row">
+        <span class="skill-cat">Frontend</span>
+        <span class="skill-list">Angular · JavaScript · TypeScript · jQuery · AJAX · HTML5 · CSS3</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">CMS & Design</span>
+        <span class="skill-list">WordPress · Elementor · Bootstrap · Responsive Design · Cross-browser</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">APIs & Tools</span>
+        <span class="skill-list">RESTful APIs · JSON · XML · Git · SEO · Performance Tuning</span>
+      </div>
+      <div class="skill-row">
+        <span class="skill-cat">Languages</span>
+        <span class="skill-list">C · C++ · Python</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Education -->
+  <div class="section">
+    <h2 class="section-title">Education</h2>
+    <div class="edu-grid">
+      <div class="edu-item">
+        <div>
+          <div class="edu-degree">Master of Computer Applications (MCA)</div>
+          <div class="edu-school">Madras University · Chennai, India</div>
+        </div>
+        <span class="edu-year">2022 – Present</span>
+      </div>
+      <div class="edu-item">
+        <div>
+          <div class="edu-degree">Bachelor of Computer Applications (BCA)</div>
+          <div class="edu-school">DR. MGR University · Chennai, India</div>
+        </div>
+        <span class="edu-year">2019 – 2022</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Projects -->
+  <div class="section">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-grid">
+      <div class="project-item">
+        <div class="project-header">
+          <span class="project-name">Banking Dashboard Platform</span>
+          <span class="project-tech">JavaScript · AJAX · jQuery · REST APIs</span>
+        </div>
+        <p class="project-desc">Comprehensive banking system with secure authentication, loan calculator, and real-time funds transfer with API integration.</p>
+      </div>
+      <div class="project-item">
+        <div class="project-header">
+          <span class="project-name">CIF Integration System</span>
+          <span class="project-tech">AJAX · JavaScript · JSON · XML</span>
+        </div>
+        <p class="project-desc">Integrated multiple CIF systems using AJAX for improved data handling on a live banking platform with complex data flows.</p>
+      </div>
+      <div class="project-item">
+        <div class="project-header">
+          <span class="project-name">E-commerce WordPress Suite</span>
+          <span class="project-tech">WordPress · Elementor · PHP · Bootstrap</span>
+        </div>
+        <p class="project-desc">Custom WordPress themes and plugins for an e-commerce platform, fully responsive with SEO optimization.</p>
+      </div>
+      <div class="project-item">
+        <div class="project-header">
+          <span class="project-name">Angular UI Components Library</span>
+          <span class="project-tech">Angular · TypeScript · SCSS · RxJS</span>
+        </div>
+        <p class="project-desc">Reusable Angular components and directives with TypeScript, focused on performance and clean design patterns.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="resume-footer">
+    ashlinbijo31@gmail.com · github.com/ashlinbijo31 · linkedin.com/in/ashlin-bijo-4146b725a
+  </div>
+
+</div>
+</body>
+</html>

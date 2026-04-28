@@ -30,6 +30,7 @@ import { CommonModule } from '@angular/common';
             <span class="btn-arrow">&#8594;</span>
           </a>
           <a href="mailto:ashlinbijo31@gmail.com" class="btn-secondary">get in touch</a>
+          <a href="/assets/resume.html" target="_blank" class="btn-resume">resume &#8599;</a>
         </div>
         <div class="hero-stats">
           <div class="stat" *ngFor="let stat of stats">
@@ -236,6 +237,17 @@ import { CommonModule } from '@angular/common';
       color: var(--accent);
       border-color: var(--accent);
     }
+
+    .btn-resume {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color var(--transition);
+    }
+
+    .btn-resume:hover { color: var(--accent-purple); }
 
     .hero-stats {
       display: flex;

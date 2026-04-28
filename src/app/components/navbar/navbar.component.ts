@@ -21,6 +21,7 @@ import { CommonModule } from '@angular/common';
             </a>
           </li>
         </ul>
+        <a href="/assets/resume.html" target="_blank" class="nav-resume">resume</a>
         <a href="#contact" class="nav-cta">hire me</a>
       </div>
     </nav>
@@ -102,6 +103,17 @@ import { CommonModule } from '@angular/common';
       -webkit-text-fill-color: transparent;
       background-clip: text;
       font-size: 0.65rem;
+    }
+
+    .nav-resume {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      transition: color var(--transition);
+
+      &:hover { color: var(--accent-purple); }
     }
 
     .nav-cta {
